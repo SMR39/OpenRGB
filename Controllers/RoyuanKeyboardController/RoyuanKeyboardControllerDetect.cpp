@@ -21,6 +21,7 @@
 #define ROYUAN_EPOMAKER_TH80_PRO_USB_PID            0x4010
 #define ROYUAN_EPOMAKER_TH80_PRO_DONGLE_PID         0x4011
 #define ROYUAN_ATTACKSHARK_K86_USB_PID              0x4015
+#define ROYUAN_ATTACKSHARK_X68_HE_PID               0x502D
 #define ROYUAN_SKYLOONG_GK68HE_PRO_PID              0x5029
 
 DetectedControllers DetectRoyuanAkkoKeyboardControllers(hid_device_info* info, const std::string&)
@@ -90,6 +91,7 @@ DetectedControllers DetectRoyuanLegacyKeyboardControllers(hid_device_info* info,
 }
 
 REGISTER_HID_DETECTOR_I("Akko 3068B Plus",                  DetectRoyuanAkkoKeyboardControllers,    ROYUAN_KEYBOARD_VID, ROYUAN_AKKO_B_SERIES_PID,              0);
+REGISTER_HID_DETECTOR_I("Attack Shark X68 HE",                DetectRoyuanGK68HEProKeyboardControllers, ROYUAN_KEYBOARD_VID, ROYUAN_ATTACKSHARK_X68_HE_PID,          2);
 REGISTER_HID_DETECTOR_I("Skyloong GK68HE Pro",              DetectRoyuanGK68HEProKeyboardControllers, ROYUAN_KEYBOARD_VID, ROYUAN_SKYLOONG_GK68HE_PRO_PID,      2);
 REGISTER_HID_DETECTOR_I("Epomaker TH80 Pro (USB Cable)",    DetectRoyuanLegacyKeyboardControllers,  ROYUAN_KEYBOARD_VID, ROYUAN_EPOMAKER_TH80_PRO_USB_PID,      2);
 REGISTER_HID_DETECTOR_I("Epomaker TH80 Pro (USB Dongle)",   DetectRoyuanLegacyKeyboardControllers,  ROYUAN_KEYBOARD_VID, ROYUAN_EPOMAKER_TH80_PRO_DONGLE_PID,   2);
